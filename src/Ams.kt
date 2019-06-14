@@ -16,8 +16,19 @@ fun feedtheFish() {
 fun shouldChangeTheWater(
     day :String,temperature: Int = 22, dirty: Int = 20 ) : Boolean {
 
-    return true
+    return when {
+        isToHot(temperature) -> true
+        isDirty(dirty) -> true
+        isSunday(day) -> true
+        else-> false
+    }
 }
+
+fun isToHot(temperature: Int) = temperature > 30
+fun isDirty(dirty: Int) = dirty > 30
+fun isSunday(day: String) = day == "sunday"
+
+
 
 
 fun randomDay() : String{
