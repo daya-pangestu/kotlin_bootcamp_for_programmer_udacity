@@ -1,8 +1,15 @@
 import java.util.*
 
 fun main(args: Array<String>) {
-    feedtheFish()
+    eagerExample()
 }
+
+fun eagerExample() {
+    val decoration = listOf("rock", "pagoda", "plastic plant", "aligator", "flowerpot")
+    val eager = decoration.filter { it.contains('p') }
+    println(eager)
+}
+
 
 fun feedtheFish() {
     val day = randomDay()
